@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.edit-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(60, 60, 215);
+    color: white;
+    text-decoration: none;
+}
+
+article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+article p {
+    line-height: 1.6;
+}
+
+article a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+article form {
+    display: inline;
+}
+
+article form button {
+    background-color: #b00020;
+}
+
+article form button:hover {
+    background-color: #d0002b;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    article form {
+        display: block;
+        margin-top: 10px;
+    }
+
+    article a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

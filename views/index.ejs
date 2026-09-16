@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    
+    <header>
+        <h1>My Blog</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Create a Post</h2>
+
+            <form action="/posts" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="content">Blog</label>
+                <textarea id="content" name="content" required></textarea>
+
+                <button type="submit">Create Post</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Blog Posts</h2>
+
+            <% posts.forEach(post => { %>
+                <article>
+                    <h3><%= post.title %></h3>
+                    <p>By <%= post.name %></p>
+                    <p><%= post.time %></p>
+                    <p><%= post.content %></p>
+
+                    <a class="edit-button" href="/posts/<%= post.id %>/edit">Edit</a>
+
+                    <form action="/posts/<%= post.id %>/delete" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </article>
+            <% }) %>
+        </section>
+    </main>
+</body>
+</html>
