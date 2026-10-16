@@ -13,6 +13,18 @@
     </header>
 
     <main>
+        <nav>
+            <% if (user) { %>
+                <span class="nameOfUser">Welcome, <%= user.name %>!</span>
+                <form action="/logout" method="POST">
+                    <button class="logout-button" type="submit">Log Out</button>
+                </form>
+            <% } else { %>
+                <a href="/signin">Sign In</a>
+                <a href="/signup">Sign Up</a>
+            <% } %>
+        </nav>
+
         <section>
             <h2>Create a Post</h2>
 
@@ -40,11 +52,13 @@
                     <p><%= post.time %></p>
                     <p><%= post.content %></p>
 
-                    <a class="edit-button" href="/posts/<%= post.id %>/edit">Edit</a>
+                    <% if (user && user.user_id === post.creator_user_id) { %>
+                        <a class="edit-button" href="/posts/<%= post.id %>/edit">Edit</a>
 
-                    <form action="/posts/<%= post.id %>/delete" method="POST">
-                        <button type="submit">Delete</button>
-                    </form>
+                        <form action="/posts/<%= post.id %>/delete" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <% } %>
                 </article>
             <% }) %>
         </section>
